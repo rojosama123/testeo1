@@ -5,13 +5,14 @@ $con=conectar();
 
 $id=$_POST['id'];
 $usuario=$_POST['usuario'];
-$email=$_POST['email'];
+$apellido=$_POST['apellido'];
 $clave=$_POST['clave'];
-$cantante=$_POST['cantante'];
-$direccion=$_POST['direccion'];
+$rut=$_POST['rut'];
+$email=$_POST['email'];
+$sexo=$_POST['sexo'];
 $fecha=$_POST['fecha'];
 
-$sql="UPDATE usuarios SET usuario='$usuario',email='$email',clave='$clave',cantante='$cantante',direccion='$direccion',fecha='$fecha' WHERE id='$id'";
+$sql="UPDATE usuarios SET usuario='$usuario',apellido='$apellido',clave='$clave',rut='$rut',email='$email',fecha='$fecha',sexo='$sexo' WHERE id='$id'";
 $query=mysqli_query($con,$sql);
 
 if($query){

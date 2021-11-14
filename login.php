@@ -47,23 +47,27 @@
         <div class="col d-none d-lg-block col-md-5 col-lg-5 col-xl-6 bg rounded">
         </div>
         <div class="col p-5 rounded-end" style="background-color: rgb(223, 223, 223);">
-          <div class="font-weight-bold mt-5 mb-5 text-center"><h2 >BIENVENIDO</h2></div>
+          <div class="font-weight-bold mt-5 text-center"><h2 >BIENVENIDO</h2></div>
+          <div class="font-weight-bold text-center">Registrese por porfavor</div>
           <!--- LOGIN -->
 
           <form action="insertar.php" method="POST">
             <div class="mb-4">
-              <label for="usuario" class="form-label">Nombre de usuario</label>
+              <label for="usuario" class="form-label">Nombre</label>
               <input type="text" class="form-control" name="usuario">
             </div>
             <div class="mb-4">
-              <label for="direccion" class="form-label">Direccion</label>
-              <input type="text" class="form-control" name="direccion">
-              
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" name="apellido">
+            </div>
+            <div class="mb-4">
+              <label for="clave" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" name="clave">
             </div>
             <div class="mb-4 row">
               <div class="col">
-                <label for="clave" class="form-label">Password</label>
-                <input type="password" class="form-control" name="clave">
+                <label for="rut" class="form-label">RUT/DNI</label>
+                <input type="text" class="form-control" name="rut">
               </div>
               <div class="col">
                 <label for="email" class="form-label">Correo electronico</label>
@@ -72,8 +76,15 @@
             </div>
             <div class="mb-4 row">
               <div class="col">
-                <label for="cantante" class="form-label">Cantante favorito</label>
-                <input type="text" class="form-control" name="cantante">
+                <div class="form-group">
+                  <label for="sexo">Sexo</label>
+                  <select id="sexo" class="form-control">
+                    <option selected>Escoger</option>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                    <option>Otros</option>
+                  </select>
+                </div>
               </div>
               <div class="col">
                 <label for="fecha" class="form-label">Fecha de nacimiento</label>

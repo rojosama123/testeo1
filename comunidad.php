@@ -42,11 +42,12 @@
                 <table class="table text-white text-center shadow rounded" >
                     <thead style="background-color:rgb(39, 39, 39);">
                         <tr>
-                            <th>Nombre de usuario</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
                             <th>Email</th>
-                            <th>Cantante favorito</th>
+                            <th>RUT/DNi</th>
+                            <th>Sexo</th>
                             <th>Fecha de nacimiento</th>
-                            <th>Direccion</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -57,10 +58,11 @@
                         ?>
                             <tr style="background: linear-gradient(to right, rgb(39, 39, 39), rgb(0, 0, 0));">
                                 <th><?php  echo $row['usuario']?></th>
-                                <th><?php  echo $row['email']?></th>   
-                                <th><?php  echo $row['cantante']?></th>
+                                <th><?php  echo $row['apellido']?></th>   
+                                <th><?php  echo $row['email']?></th>
+                                <th><?php  echo $row['rut']?></th>
+                                <th><?php  echo $row['sexo']?></th>
                                 <th><?php  echo $row['fecha']?></th>
-                                <th><?php  echo $row['direccion']?></th>
                                 <th><a href="actualizar.php?id=<?php echo $row['id']; ?>" class="btn btn-dark">Actualizar</a></th>
                                 <th><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a></th> 
                                                                     

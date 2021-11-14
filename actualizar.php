@@ -48,12 +48,12 @@ $row=mysqli_fetch_array($query);
                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                 </div>
                 <div class="mb-4">
-                    <label for="usuario" class="form-label">Nombre de usuario</label>
+                    <label for="usuario" class="form-label">Nombre</label>
                     <input type="text" class="form-control" name="usuario" value="<?php echo $row['usuario'] ?>">
                 </div>
                 <div class="mb-4">
-                    <label for="direccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" name="direccion" value="<?php echo $row['direccion'] ?>">
+                    <label for="direccion" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="direccion" value="<?php echo $row['apellido'] ?>">
                 
                 </div>
                 <div class="mb-4 row">
@@ -68,8 +68,8 @@ $row=mysqli_fetch_array($query);
                 </div>
                 <div class="mb-4 row">
                     <div class="col">
-                        <label for="cantante" class="form-label">Cantante favorito</label>
-                        <input type="text" class="form-control" name="cantante" value="<?php echo $row['cantante'] ?>">
+                        <label for="cantante" class="form-label">RUT/DNI</label>
+                        <input type="text" class="form-control" name="cantante" value="<?php echo $row['rut'] ?>">
                     </div>
                     <div class="col">
                         <label for="fecha" class="form-label">Fecha de nacimiento</label>
