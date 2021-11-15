@@ -28,7 +28,7 @@
       <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
         <h1>ONLYMUSIC</h1>
         <div class="col" style="margin-top: 10px;">
-          <a href="home.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
+          <a href="contenido.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
           <a href="nosotros.php" class="btn btn-dark active" style="margin-right: 20px;">Nosotros</a>
           <a href="login.php" class="btn btn-dark active" style="margin-right: 20px;">Registrarse</a>
           <a href="comunidad.php" class="btn btn-dark active">Comunidad</a>
@@ -42,7 +42,7 @@
             <p>LOS GUSTOS LATINOS SE ENCUENTRAN EN</p>
             <h1 class="card-title">'ONLYMUSIC'</h1>
             <p>DISFRUTA Y GUARDA TUS GUSTOS REGISTRANDOTE</p>
-            <a href="http://127.0.0.1:5500/login.html" class="btn btn-danger active">MORE</a>
+            <a href="login.php" class="btn btn-danger active">MORE</a>
           </div>
         </div>
       </div>

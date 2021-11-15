@@ -52,8 +52,8 @@ $row=mysqli_fetch_array($query);
                     <input type="text" class="form-control" name="usuario" value="<?php echo $row['usuario'] ?>">
                 </div>
                 <div class="mb-4">
-                    <label for="direccion" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="direccion" value="<?php echo $row['apellido'] ?>">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" value="<?php echo $row['apellido'] ?>">
                 
                 </div>
                 <div class="mb-4 row">
@@ -68,13 +68,24 @@ $row=mysqli_fetch_array($query);
                 </div>
                 <div class="mb-4 row">
                     <div class="col">
-                        <label for="cantante" class="form-label">RUT/DNI</label>
-                        <input type="text" class="form-control" name="cantante" value="<?php echo $row['rut'] ?>">
+                        <label for="rut" class="form-label">RUT/DNI</label>
+                        <input type="text" class="form-control" name="rut" value="<?php echo $row['rut'] ?>">
                     </div>
                     <div class="col">
-                        <label for="fecha" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" name="fecha" value="<?php echo $row['fecha'] ?>">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input type="number" class="form-control" name="edad" value="<?php echo $row['edad'] ?>">
                     </div>
+                </div>
+                <div class="mb-4 row">
+                  <div class="form-group" style="margin-left:20px">
+                    <label for="sexo">Sexo</label>
+                    <select name="sexo" class="form-control">
+                      <option selected><?php echo $row['sexo'] ?></option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Otros">Otros</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="text-center mt-5">
                     <button type="submit" class="btn btn-dark active">Actualizar</button>

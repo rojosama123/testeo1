@@ -35,7 +35,7 @@
       <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
         <h1>ONLYMUSIC</h1>
         <div class="col" style="margin-top: 10px;">
-          <a href="home.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
+          <a href="contenido.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
           <a href="nosotros.php" class="btn btn-dark active" style="margin-right: 20px;">Nosotros</a>
           <a href="login.php" class="btn btn-dark active" style="margin-right: 20px;">Registrarse</a>
           <a href="comunidad.php" class="btn btn-dark active">Comunidad</a>
@@ -78,17 +78,17 @@
               <div class="col">
                 <div class="form-group">
                   <label for="sexo">Sexo</label>
-                  <select id="sexo" class="form-control">
+                  <select name="sexo" class="form-control">
                     <option selected>Escoger</option>
-                    <option>Masculino</option>
-                    <option>Femenino</option>
-                    <option>Otros</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otros">Otros</option>
                   </select>
                 </div>
               </div>
               <div class="col">
-                <label for="fecha" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="fecha">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" class="form-control" name="edad">
               </div>
               
             </div>

@@ -27,7 +27,7 @@
       <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
         <h1>ONLYMUSIC</h1>
         <div class="col" style="margin-top: 10px;">
-          <a href="home.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
+          <a href="contenido.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
           <a href="nosotros.php" class="btn btn-dark active" style="margin-right: 20px;">Nosotros</a>
           <a href="login.php" class="btn btn-dark active" style="margin-right: 20px;">Registrarse</a>
           <a href="comunidad.php" class="btn btn-dark active">Comunidad</a>
@@ -45,9 +45,9 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Email</th>
-                            <th>RUT/DNi</th>
+                            <th>RUT/DNI</th>
                             <th>Sexo</th>
-                            <th>Fecha de nacimiento</th>
+                            <th>Edad</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -62,7 +62,7 @@
                                 <th><?php  echo $row['email']?></th>
                                 <th><?php  echo $row['rut']?></th>
                                 <th><?php  echo $row['sexo']?></th>
-                                <th><?php  echo $row['fecha']?></th>
+                                <th><?php  echo $row['edad']?></th>
                                 <th><a href="actualizar.php?id=<?php echo $row['id']; ?>" class="btn btn-dark">Actualizar</a></th>
                                 <th><a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a></th> 
                                                                     
