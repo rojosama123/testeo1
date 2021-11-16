@@ -22,7 +22,7 @@
 
     <style>
       .bg{
-        background-image: url(IMG/piano-4089731_1920.jpg);
+        background-image: url(IMG/adult-ga2677c404_1920.jpg);
         background-position: center center;
         background-size: cover;
       }
@@ -37,24 +37,23 @@
         </div>
         <div class="col p-5 rounded-end" style="background-color: rgb(223, 223, 223);">
           <div class="font-weight-bold mt-5 text-center"><h2 >BIENVENIDO</h2></div>
-          <div class="font-weight-bold text-center" style="margin-bottom:70px">INICIO DE SESION</div>
+          <div class="font-weight-bold text-center" style="margin-bottom:50px">INICIO DE SESION</div>
           <!--- LOGIN -->
 
           <form action="verificar.php" method="POST">
             <div class="mb-5">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email">
+              <input type="email" class="form-control" name="email" value="<?php if(isset($email)) echo $email ?>">
             </div>
             <div class="mb-5">
                 <label for="clave" class="form-label">Password</label>
                 <input type="password" class="form-control" name="clave">
             </div>
-            <div>¿Olvidó su contraseña?<a href=""> Click aquí</a> </div>
-            <div>¿No tiene cuenta?<a href=""> Crear cuenta</a></div>
+            <div>¿Olvidó su contraseña?<a href="recuperar.php"> Click aquí</a> </div>
+            <div>¿No tiene cuenta?<a href="login.php"> Crear cuenta</a></div>
             <div class="text-center mt-5">
               <button type="submit" class="btn btn-dark d-block w-100">Iniciar sesion</button>
             </div>
-            
           </form>
 
           
