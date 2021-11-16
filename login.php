@@ -1,11 +1,13 @@
-<?php 
-    include("conexion.php");
-    $con=conectar();
-
-    $sql="SELECT *  FROM usuarios";
-    $query=mysqli_query($con,$sql);
-
-    $row=mysqli_fetch_array($query);
+<?php
+    if(isset($_POST['enviar'])){
+      $usuario=$_POST['usuario'];
+      $apellido=$_POST['apellido'];
+      $clave=$_POST['clave'];
+      $rut=$_POST['rut'];
+      $email=$_POST['email'];
+      $sexo=$_POST['sexo'];
+      $edad=$_POST['edad'];
+    }
 ?>
 
 <!doctype html>
@@ -51,14 +53,14 @@
           <div class="font-weight-bold text-center">Registrese por porfavor</div>
           <!--- LOGIN -->
 
-          <form action="insertar.php" method="POST">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
             <div class="mb-4">
               <label for="usuario" class="form-label">Nombre</label>
-              <input type="text" class="form-control" name="usuario">
+              <input type="text" class="form-control" name="usuario" value="<?php if(isset($usuario)) echo $usuario?>">
             </div>
             <div class="mb-4">
               <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" name="apellido">
+              <input type="text" class="form-control" name="apellido" value="<?php if(isset($apellido)) echo $apellido?>">
             </div>
             <div class="mb-4">
               <label for="clave" class="form-label">Contraseña</label>
@@ -67,11 +69,11 @@
             <div class="mb-4 row">
               <div class="col">
                 <label for="rut" class="form-label">RUT/DNI</label>
-                <input type="text" class="form-control" name="rut">
+                <input type="text" class="form-control" name="rut" value="<?php if(isset($rut)) echo $rut?>">
               </div>
               <div class="col">
                 <label for="email" class="form-label">Correo electronico</label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" value="<?php if(isset($email)) echo $email?>">
               </div>
             </div>
             <div class="mb-4 row">
@@ -88,13 +90,17 @@
               </div>
               <div class="col">
                 <label for="edad" class="form-label">Edad</label>
-                <input type="number" class="form-control" name="edad">
+                <input type="number" class="form-control" name="edad" value="<?php if(isset($edad)) echo $edad?>">
               </div>
               
             </div>
+            <?php
+            include("insertar.php");
+            ?>
             <div class="text-center mt-5">
-              <button type="submit" class="btn btn-dark">Registrarse</button>
+              <button type="submit" class="btn btn-dark" name="enviar">Registrarse</button>
             </div>
+            
           </form>
 
           
