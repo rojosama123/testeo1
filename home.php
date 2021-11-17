@@ -1,11 +1,11 @@
-<?php 
-    include("conexion.php");
-    $con=conectar();
-
-    $sql="SELECT *  FROM usuarios";
-    $query=mysqli_query($con,$sql);
-
-    $row=mysqli_fetch_array($query);
+<?php
+include("conexion.php");
+$con=conectar();
+if(isset($_POST['enviar'])){
+  
+  $clave=$_POST['clave'];
+  $email=$_POST['email'];
+}
 ?>
 
 <!doctype html>
@@ -37,10 +37,10 @@
         </div>
         <div class="col p-5 rounded-end" style="background-color: rgb(223, 223, 223);">
           <div class="font-weight-bold mt-5 text-center"><h2 >BIENVENIDO</h2></div>
-          <div class="font-weight-bold text-center" style="margin-bottom:50px">INICIO DE SESION</div>
+          <div class="font-weight-bold text-center" style="margin-bottom:50px">INICIE DE SESION</div>
           <!--- LOGIN -->
 
-          <form action="verificar.php" method="POST">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
             <div class="mb-5">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" name="email" value="<?php if(isset($email)) echo $email ?>">
@@ -50,9 +50,28 @@
                 <input type="password" class="form-control" name="clave">
             </div>
             <div>¿Olvidó su contraseña?<a href="recuperar.php"> Click aquí</a> </div>
-            <div>¿No tiene cuenta?<a href="login.php"> Crear cuenta</a></div>
-            <div class="text-center mt-5">
-              <button type="submit" class="btn btn-dark d-block w-100">Iniciar sesion</button>
+            <div class="mb-2">¿No tiene cuenta?<a href="login.php"> Crear cuenta</a></div>
+            <?php
+            if(isset($_POST['enviar'])){
+              if($clave == "" || $email == ""){
+                  echo "<p class='text-danger'>* Campos vacios</p>";
+              }
+              else{
+                $sql="SELECT clave FROM usuarios WHERE email='$email'";
+                $query=mysqli_query($con,$sql);
+                $row=mysqli_fetch_array($query);
+                if($row['clave'] != $clave){
+                  echo "<p class='text-danger'>Clave incorrecta</p>";
+                }
+                else{
+                    Header("Location: contenido.php");
+                }
+                
+              }
+            }
+            ?>
+            <div class="text-center">
+              <button type="submit" class="btn btn-dark d-block w-100" name="enviar">Iniciar sesion</button>
             </div>
           </form>
 

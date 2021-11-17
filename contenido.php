@@ -30,7 +30,6 @@
         <div class="col" style="margin-top: 10px;">
           <a href="contenido.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
           <a href="nosotros.php" class="btn btn-dark active" style="margin-right: 20px;">Nosotros</a>
-          <a href="login.php" class="btn btn-dark active" style="margin-right: 20px;">Registrarse</a>
           <a href="comunidad.php" class="btn btn-dark active">Comunidad</a>
         </div>
       </div>

@@ -3,15 +3,7 @@
 include("conexion.php");
 $con=conectar();
 
-if($_REQUEST['sexo'] == 0){
-    $sexo= 'Masculino';
-}
-else if($_REQUEST['sexo'] = 1){
-    $sexo= 'Femenino';
-}
-else if($_REQUEST['sexo'] = 2){
-    $sexo= 'Otros';
-}
+
 
 $id=$_POST['id'];
 $usuario=$_POST['usuario'];

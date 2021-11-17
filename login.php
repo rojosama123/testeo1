@@ -1,13 +1,16 @@
 <?php
-    if(isset($_POST['enviar'])){
-      $usuario=$_POST['usuario'];
-      $apellido=$_POST['apellido'];
-      $clave=$_POST['clave'];
-      $rut=$_POST['rut'];
-      $email=$_POST['email'];
-      $sexo=$_POST['sexo'];
-      $edad=$_POST['edad'];
-    }
+include("conexion.php");
+$con=conectar();
+if(isset($_POST['enviar'])){
+  
+  $usuario=$_POST['usuario'];
+  $apellido=$_POST['apellido'];
+  $clave=$_POST['clave'];
+  $rut=$_POST['rut'];
+  $email=$_POST['email'];
+  $sexo=$_POST['sexo'];
+  $edad=$_POST['edad'];
+}
 ?>
 
 <!doctype html>
@@ -33,17 +36,6 @@
 
   </head>
   <body style="background: linear-gradient(to right, rgb(39, 39, 39), rgb(0, 0, 0));">
-  <header class="container-fluid text-white text-center">
-      <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
-        <h1>ONLYMUSIC</h1>
-        <div class="col" style="margin-top: 10px;">
-          <a href="contenido.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
-          <a href="nosotros.php" class="btn btn-dark active" style="margin-right: 20px;">Nosotros</a>
-          <a href="login.php" class="btn btn-dark active" style="margin-right: 20px;">Registrarse</a>
-          <a href="comunidad.php" class="btn btn-dark active">Comunidad</a>
-        </div>
-      </div>
-    </header>
     <div class="container w-100 mt-5 rounded shadow my-5">
       <div class="row align-items-stretch">
         <div class="col d-none d-lg-block col-md-5 col-lg-5 col-xl-6 bg rounded">
@@ -95,7 +87,19 @@
               
             </div>
             <?php
-            include("insertar.php");
+            if(isset($_POST['enviar'])){
+              if($usuario == "" || $apellido == "" || $clave == "" || $rut == "" || $email == "" || $sexo == "Escoger" || $edad <1){
+                  echo "<p class='text-danger'>* Datos erroneos o campos vacios</p>";
+              }
+              else{
+                $sql="INSERT INTO usuarios VALUES(id,'$usuario','$apellido','$clave','$rut','$email','$sexo','$edad')";
+                $query= mysqli_query($con,$sql);
+                if($query){
+                  Header("Location: home.php");
+                }
+                
+              }
+            }
             ?>
             <div class="text-center mt-5">
               <button type="submit" class="btn btn-dark" name="enviar">Registrarse</button>
