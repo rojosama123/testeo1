@@ -35,7 +35,7 @@ if(isset($_POST['enviar'])){
         <div class="col d-none d-lg-block col-md-5 col-lg-5 col-xl-6 bg rounded">
         </div>
         <div class="col p-5 rounded-end" style="background-color: rgb(223, 223, 223);">
-          <div class="font-weight-bold my-5 "><h2 >RECUPERACION DE CONTRASEÑA</h2></div>
+          <div class="font-weight-bold my-5 "><h2 >CAMBIO DE CONTRASEÑA</h2></div>
           <!--- LOGIN -->
 
           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
@@ -50,8 +50,11 @@ if(isset($_POST['enviar'])){
             </div>
             <?php
             if(isset($_POST['enviar'])){
-              if($clave == "" || $email == ""){
-                  echo "<p class='text-danger'>* Campos vacios</p>";
+              if($email == "" || strpos($email, "@") === false){
+                echo "<p class='text-danger'>* Correo electronico no valido (Recuerde el '@')</p>";
+              }
+              if($clave == "" || strlen($clave)<4){
+                echo "<p class='text-danger'>* Contraseña no valida (Minimo 4 caracteres)</p>";
               }
               else{
                 $sql="UPDATE usuarios SET clave='$clave' WHERE email='$email'";

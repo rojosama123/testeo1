@@ -73,7 +73,7 @@ if(isset($_POST['enviar'])){
                 <div class="form-group">
                   <label for="sexo">Sexo</label>
                   <select name="sexo" class="form-control">
-                    <option selected>Escoger</option>
+                    <option selected value="Escoger">Escoger</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                     <option value="Otros">Otros</option>
@@ -88,8 +88,26 @@ if(isset($_POST['enviar'])){
             </div>
             <?php
             if(isset($_POST['enviar'])){
-              if($usuario == "" || $apellido == "" || $clave == "" || $rut == "" || $email == "" || $sexo == "Escoger" || $edad <1){
-                  echo "<p class='text-danger'>* Datos erroneos o campos vacios</p>";
+              if($usuario == "" || strlen($usuario)>20){
+                echo "<p class='text-danger'>* Nombre no valido (Maximo 20 caracteres)</p>";
+              }
+              if($apellido == "" || strlen($apellido)>20){
+                echo "<p class='text-danger'>* Apellido no valido (Maximo 20 caracteres)</p>";
+              }
+              if($clave == "" || strlen($clave)<4){
+                echo "<p class='text-danger'>* Contraseña no valido (Minimo 4 caracteres)</p>";
+              }
+              if($rut == "" || strlen($rut)>9){
+                echo "<p class='text-danger'>* RUT/DNI no valido (Sin puntos ni guion)</p>";
+              }
+              if($email == "" || strpos($email, "@") === false){
+                echo "<p class='text-danger'>* Correo electronico no valido (Recuerde el '@')</p>";
+              }
+              if($sexo == "Escoger"){
+                echo "<p class='text-danger'>* Escoja sexo</p>";
+              }
+              if($edad <6 || $edad>100){
+                echo "<p class='text-danger'>* Edad no valida</p>";
               }
               else{
                 $sql="INSERT INTO usuarios VALUES(id,'$usuario','$apellido','$clave','$rut','$email','$sexo','$edad')";

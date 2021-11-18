@@ -20,7 +20,8 @@
         <div class="col" style="margin-top: 10px;">
           <a href="contenido.php" class="btn btn-dark active" style="margin-right: 20px;">Home</a>
           <a href="nosotros.php" class="btn btn-dark active" style="margin-right: 20px;">Nosotros</a>
-          <a href="comunidad.php" class="btn btn-dark active">Comunidad</a>
+          <a href="comunidad.php" class="btn btn-dark active" style="margin-right: 20px;">Comunidad</a>
+          <a href="home.php" class="btn btn-dark active" >Cerrar sesion</a>
 
         </div>
       </div>
