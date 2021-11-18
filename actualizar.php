@@ -8,7 +8,9 @@ $sql="SELECT * FROM usuarios WHERE id='$id'";
 $query=mysqli_query($con,$sql);
 
 $row=mysqli_fetch_array($query);
+
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -43,7 +45,7 @@ $row=mysqli_fetch_array($query);
         <div class="text-white" style="width: 690px;margin-left: 50px; margin-top: 50px;">
           <h1 style="margin-left:20px">ACTUALIZAR DATOS</h1>
           <div class="card-body" style="background: linear-gradient(to right, rgb(39, 39, 39), rgb(0, 0, 0));">
-            <form action="update.php" method="POST">
+            <form action="" method="POST">
                 <div class="mb-4">
                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                 </div>
@@ -87,8 +89,12 @@ $row=mysqli_fetch_array($query);
                     </select>
                   </div>
                 </div>
+                <?php
+                include("update.php");
+                ?>
+                
                 <div class="text-center mt-5">
-                    <button type="submit" class="btn btn-dark active">Actualizar</button>
+                    <button type="submit" class="btn btn-dark active" name="enviar">Actualizar</button>
                 </div>
             </form>
           </div>
